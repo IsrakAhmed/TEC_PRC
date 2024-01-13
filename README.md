@@ -1,4 +1,4 @@
-# Employee Information system
+# TEC Programming & Robotics  Club
 
-Create an Employee Information System using the Laravel web framework.
+Member Information System.
 
