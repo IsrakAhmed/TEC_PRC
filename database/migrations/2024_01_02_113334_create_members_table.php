@@ -23,6 +23,7 @@ class CreateMembersTable extends Migration
             $table->string('email', 255);
             $table->text('address');
             $table->string('blood_group');
+            $table->string('role');
             $table->timestamps();
 
             $table->unique('id');
