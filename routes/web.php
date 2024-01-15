@@ -36,7 +36,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/delete/member', 'App\Http\Controllers\MemberController@viewtodelete');
     Route::get('/delete', 'App\Http\Controllers\MemberController@getidfordelete');
 
+    Route::get('/master/admin', 'App\Http\Controllers\AdminController@masterAdmin');
+
+    Route::get('/admin/edit/member/role', 'App\Http\Controllers\AdminController@editRole');
+
+    Route::post('/admin/edit/member/role', 'App\Http\Controllers\AdminController@edit');
+
+    Route::patch('/admin/edit/member/role/{id}', 'App\Http\Controllers\AdminController@update');
+
     Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+
 
 //Auth::routes();
 
@@ -45,5 +54,10 @@ Route::middleware(['auth'])->group(function () {
 });
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/about', 'App\Http\Controllers\HomeController@about');
+
+Route::get('/contact', 'App\Http\Controllers\HomeController@contact');
+
 
 Route::get('/', 'App\Http\Controllers\MemberController@index');

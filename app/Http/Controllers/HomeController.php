@@ -29,10 +29,10 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return// \Illuminate\Contracts\Support\Renderable
      */
 
-    public function index(Request $request)
+    public function index(Request $request, Member $member)
     {
         $searchTerm = $request->input('search_term');
 
@@ -43,10 +43,42 @@ class HomeController extends Controller
             ->orWhere('address', 'like', '%' . $searchTerm . '%')
             ->paginate(5);
 
-        if ($request->ajax()) {
-            return view('welcome', ['members' => $members])->render();
+        $master = Member::find(auth()->user()->id);
+
+        if($master->role == 'Master Admin'){
+
+            if ($request->ajax()) {
+                return view('admin.master', ['members' => $members])->render();
+            }
+
+            return view('admin.master', compact('members'));
         }
 
-        return view('home', compact('members'));
+        elseif ($master->role == 'Admin'){
+
+            if ($request->ajax()) {
+                return view('admin', ['members' => $members])->render();
+            }
+
+            return view('admin.admin', compact('members'));
+        }
+
+        else {
+
+            if ($request->ajax()) {
+                return view('welcome', ['members' => $members])->render();
+            }
+
+            return view('home', compact('members'));
+        }
+    }
+
+
+    public function contact(Request $request){
+        return view('contact');
+    }
+
+    public function about(Request $request){
+        return view('about');
     }
 }

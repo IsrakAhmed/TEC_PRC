@@ -1,0 +1,84 @@
+/* Responsive Styles */
+@media (max-width: 767px) {
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .search-form {
+        margin-bottom: 1em;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer {
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+/* Pagination Styles */
+.row {
+    margin: 0;
+}
+
+/* Search Form Styles */
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    table {
+        font-size: 14px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+}

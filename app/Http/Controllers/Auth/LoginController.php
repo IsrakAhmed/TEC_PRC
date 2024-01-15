@@ -63,7 +63,9 @@ class LoginController extends Controller
         if ($success) {
             // Authentication passed...
             $request->session()->regenerate();
+
             return redirect('/home');
+
         }
         else {
             return redirect()->back()->withInput($request->only('id', 'password'))->withErrors([

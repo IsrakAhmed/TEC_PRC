@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.admin')
 
 @section('page-content')
     <legend class="pt-4 pl-4">Register Member</legend>

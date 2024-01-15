@@ -65,6 +65,7 @@ class MemberController extends Controller
                 'email' => $request['email'],
                 'address' => $request['address'],
                 'blood_group' => $request['blood_group'],
+                'role' => 'General Member',
             ]);
 
             User::create([
@@ -119,7 +120,8 @@ class MemberController extends Controller
             'mobile_no' => 'required|numeric',
             'email' => 'email',
             'address' => 'required',
-            'blood_group' => 'required'
+            'blood_group' => 'required',
+            'role' => 'General Member'
         ]);
 
         $member->update($request->all());

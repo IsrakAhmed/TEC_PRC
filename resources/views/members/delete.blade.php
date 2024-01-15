@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.admin')
 
 @section('page-content')
     <legend class="pt-4 pl-4">Delete Member</legend>
@@ -39,23 +39,23 @@
             <div class="col-sm-10">
 
                 <div class="radio-options">
-                    
+
                     <label class="radio-option">
                         <input disabled type="radio" class="form-control @error('department') is-invalid @enderror" value="CSE" id="department_cse" name="department" @if($member->department === "CSE") checked @endif> CSE
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('department') is-invalid @enderror" value="EEE" id="department_eee" name="department" @if($member->department === "EEE") checked @endif> EEE
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('department') is-invalid @enderror" value="CE" id="department_ce" name="department" @if($member->department === "CE") checked @endif> CE
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('department') is-invalid @enderror" value="TE" id="department_te" name="department" @if($member->department === "TE") checked @endif> TE
                     </label>
-                    
+
                 </div>
 
                 @error('department')
@@ -71,27 +71,27 @@
             <div class="col-sm-10">
 
                 <div class="radio-options">
-                    
+
                     <label class="radio-option">
                         <input disabled type="radio" class="form-control @error('session') is-invalid @enderror" value="2018-2019" id="session_2018" name="session" @if($member->session === "2018-2019") checked @endif> 2018-2019
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('session') is-invalid @enderror" value="2019-2020" id="session_2019" name="session" @if($member->session === "2019-2020") checked @endif> 2019-2020
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('session') is-invalid @enderror" value="2020-2021" id="session_2020" name="session" @if($member->session === "2020-2021") checked @endif> 2020-2021
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('session') is-invalid @enderror" value="2021-2022" id="session_2021" name="session" @if($member->session === "2021-2022") checked @endif> 2021-2022
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('session') is-invalid @enderror" value="2022-2023" id="session_2022" name="session" @if($member->session === "2022-2023") checked @endif> 2022-2023
                     </label>
-            
+
                 </div>
 
                 @error('session')
@@ -159,39 +159,39 @@
             <div class="col-sm-10">
 
                 <div class="radio-options">
-                    
+
                     <label class="radio-option">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="A+" id="blood_group" name="blood_group" @if($member->blood_group === "A+") checked @endif> A+
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="A-" id="blood_group" name="blood_group" @if($member->blood_group === "A-") checked @endif> A-
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="B+" id="blood_group" name="blood_group"
                         @if($member->blood_group === "B+") checked @endif> B+
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="B-" id="blood_group" name="blood_group" @if($member->blood_group === "B-") checked @endif> B-
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="AB+" id="blood_group" name="blood_group" @if($member->blood_group === "AB+") checked @endif> AB+
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="AB-" id="blood_group" name="blood_group" @if($member->blood_group === "AB-") checked @endif> AB-
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="O+" id="blood_group" name="blood_group" @if($member->blood_group === "O+") checked @endif> O+
                     </label>
-                    
+
                     <label class="radio-option ml-4">
                         <input disabled type="radio" class="form-control @error('blood_group') is-invalid @enderror" value="O-" id="blood_group" name="blood_group" @if($member->blood_group === "O-") checked @endif> O-
-                    
+
                     </label>
 
                 </div>

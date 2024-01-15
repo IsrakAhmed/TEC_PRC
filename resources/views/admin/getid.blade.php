@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('page-content')
-    <legend class="pt-4 pl-4">Enter Member ID To Delete</legend>
+    <legend class="pt-4 pl-4">Enter Member ID To Edit Role</legend>
 
     @if(Session::has('success'))
         <div class="alert alert-success">
@@ -15,7 +15,7 @@
         </div>
     @endif
 
-    <form action="/delete/member" method="post" class="search-form">
+    <form action="/admin/edit/member/role" method="post" class="search-form">
         @csrf
 
         <div class="form-group">

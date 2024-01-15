@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.admin')
 
 @section('page-content')
     <br>
@@ -8,7 +8,8 @@
     <h2 class="text-center pt-4">Members Information</h2>
 
     <form action="/home" method="GET" class="search-form" id="member-search-form">
-        <input placeholder="Search" type="text" name="search_term" id="search_term" value="{{ request('search_term') }}">
+        <input placeholder="Search" type="text" name="search_term" id="search_term"
+               value="{{ request('search_term') }}">
     </form>
 
     <div class="text-center" style="padding-top:2em">
@@ -29,7 +30,9 @@
             <tbody id="member-table-body">
             @if ($members->isEmpty())
                 <tr>
-                    <td style="color:red; padding-top:25px; padding-left:22em; font-weight: bold;" colspan="6">No Members Found</td>
+                    <td style="color:red; padding-top:25px; padding-left:22em; font-weight: bold;" colspan="6">No
+                        Members Found
+                    </td>
                 </tr>
             @else
                 @foreach ($members as $member)
@@ -66,19 +69,19 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             function performSearch() {
                 $.ajax({
                     url: $('#member-search-form').attr('action'),
                     method: 'GET',
                     data: $('#member-search-form').serialize(),
-                    success: function(data) {
+                    success: function (data) {
                         $('#member-table-body').html(data);
                     }
                 });
             }
 
-            $('#search_term').on('input', function() {
+            $('#search_term').on('input', function () {
                 performSearch();
             });
 

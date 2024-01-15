@@ -29,7 +29,36 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    @if($_SERVER['REQUEST_URI'] != '/register' && auth()->check())
+    <div class="collapse navbar-collapse laynav" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+            @auth
+                <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/home') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/register') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/edit') ? 'active' : ''; ?>
+                <?php echo ($_SERVER['REQUEST_URI'] == '/edit/member') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="/edit">Edit</a>
+                </li>
+                <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/delete') ? 'active' : ''; ?>
+                <?php echo ($_SERVER['REQUEST_URI'] == '/delete/member') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="/delete">Delete</a>
+                </li>
+
+                @if(auth()->user()->member->role == 'Master Admin')
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/edit/member/role">Edit-Role</a>
+                    </li>
+               @endif
+            @endauth
+
+        </ul>
+    </div>
+
+    @if($_SERVER['REQUEST_URI'] != '/register')
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
@@ -38,8 +67,22 @@
                 <!-- Authentication Links -->
 
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->member->name }}
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        @auth
+                            <h6>{{ Auth::user()->member->name }}</h6>
+
+                            @if(auth()->user()->member->role == 'Master Admin')
+                                <h6 style="margin-left: 5px;"> [ Master Admin ]</h6>
+
+                            @elseif(auth()->user()->member->role == 'Admin')
+                                <h6 style="margin-left: 5px;"> [ Admin ]</h6>
+
+                            @endif
+                        @else
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">Login</a>
+                            </li>
+                        @endauth
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

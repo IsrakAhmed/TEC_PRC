@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <title>TEC PRC</title>
 
     <style>
@@ -51,7 +50,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a id="club_name" class="navbar-brand" href="/">TEC Programming & Robotics Club</a>
+        <a class="navbar-brand" href="/">TEC Programming & Robotics Club</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -91,35 +90,7 @@
         <h1 class="text-center text-primary">TEC Programming & Robotics Club</h1>
     </header>
 
-    <section>
-        <h2 style="text-align:center;">Welcome to our Club!</h2>
-        <p style="text-align:center;">
-            We are a passionate community dedicated to exploring and advancing technology, programming, and robotics.
-            Join us in the exciting journey of innovation and learning.
-        </p>
-
-
-        <img style="padding-left:30px;" src="{{ asset('storage/image/club-image.jpg') }}" alt="Club Image">
-
-        <div class="card p-4 bg-light d-flex align-items-center justify-content-center">
-            <h2 class="text-primary mb-4">What We Offer</h2>
-            <ul class="list-unstyled fw-bold">
-                <li>Programming workshops</li>
-                <li>Robotics competitions</li>
-                <li>Collaborative coding projects</li>
-                <li>Networking opportunities</li>
-                <li>And much more!</li>
-            </ul>
-        </div>
-
-    </section>
-
-    <footer class="footer mt-auto pt-2 pb-3">
-        <div class="container text-center">
-            <p class="mt-2" style="margin-bottom: 0.5px">© 2024 Israk Ahmed. All rights reserved.</p>
-            <a href="https://israkahmed.github.io/Portfolio/">Developed by: Israk Ahmed</a>
-        </div>
-    </footer>
+    <h1 style="color: red; text-align: center; margin-top: 4em;">Working On It</h1>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
