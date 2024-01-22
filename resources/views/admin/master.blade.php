@@ -13,7 +13,7 @@
                value="{{ request('search_term') }}">
     </form>
 
-    <div class="text-center" style="padding-top:2em">
+    <div class="table-responsive" style="padding-top:2em;">
         <table>
             <thead>
             <tr>
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <footer class="footer mt-auto pt-2">
+    <footer class="footer mt-auto pt-2 pb-3">
         <div class="container text-center">
             <p class="mt-2" style="margin-bottom: 0.5px">© 2023 Israk Ahmed. All rights reserved.</p>
             <a href="https://israkahmed.github.io/Portfolio/">Developed by: Israk Ahmed</a>
@@ -92,9 +92,39 @@
 
 
     <style>
+        /* Basic table styling */
         table {
-            width: 100%;
+            width: 130%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
         }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Styling for no members found message */
+        #member-table-body td[colspan="9"] {
+            color: red;
+            padding-top: 25px;
+            padding-left: 22em;
+            font-weight: bold;
+        }
+
+        /* Alternating row colors for better readability */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+
     </style>
+
 
 @endsection
