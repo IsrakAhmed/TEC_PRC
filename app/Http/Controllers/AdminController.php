@@ -134,13 +134,7 @@ class AdminController extends Controller
                 $request->validate([
                     'id' => 'required',
                     'name' => 'required',
-                    'department' => 'required',
-                    'session' => 'required',
-                    'joining_date' => 'required|date',
-                    'mobile_no' => 'required|numeric',
-                    'email' => 'email',
-                    'address' => 'required',
-                    'blood_group' => 'required'
+                    'role' => 'required'
                 ]);
 
                 $member->update($request->all());
