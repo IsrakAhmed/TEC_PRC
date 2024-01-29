@@ -76,6 +76,7 @@ return [
             'mailers' => [
                 'smtp',
                 'log',
+                'mailgun',
             ],
         ],
     ],
@@ -92,8 +93,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'tecprc.ru@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Israk Ahmed'),
     ],
 
     /*

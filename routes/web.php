@@ -18,6 +18,20 @@ Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')-
 
 Route::post('/login', 'App\Http\Controllers\Auth\LoginController@authenticate');
 
+
+Route::get('/reset-password/verify', 'App\Http\Controllers\Auth\ResetPasswordController@showVerificationPage');
+
+Route::post('/reset-password/verify', 'App\Http\Controllers\Auth\ResetPasswordController@sendOTP');
+
+Route::get('/reset-password/verify-otp', 'App\Http\Controllers\Auth\ResetPasswordController@getForVerifyOTP');
+
+Route::post('/reset-password/verify-otp', 'App\Http\Controllers\Auth\ResetPasswordController@matchOTP');
+
+Route::get('/password-update', 'App\Http\Controllers\Auth\ResetPasswordController@getForUpdatePassword');
+
+Route::patch('/password-update', 'App\Http\Controllers\Auth\ResetPasswordController@updatePassword');
+
+
 Route::post('/register', 'App\Http\Controllers\MemberController@store');
 
 Route::get('/register', 'App\Http\Controllers\MemberController@create');

@@ -79,5 +79,23 @@
             @yield('content')
         </main>
     </div>
+
+
+    <style>
+        /* Remove spinner for WebKit (Chrome, Safari) */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Remove spinner for Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
+
+
 </body>
 </html>

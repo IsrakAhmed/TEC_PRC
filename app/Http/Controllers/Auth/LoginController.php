@@ -51,7 +51,6 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        //$credentials = $request->only('member_id', 'password');
 
         $credentials = $request->validate([
             'id' => ['required'],
