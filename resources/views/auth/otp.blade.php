@@ -9,6 +9,8 @@
 
     <title>{{ config('app.name', 'TEC PRC') }}</title>
 
+    <link rel="icon" type="image/png" href="{{ asset('storage/image/logo.jpeg') }}">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

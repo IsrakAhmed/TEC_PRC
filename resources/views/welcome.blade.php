@@ -11,6 +11,8 @@
 
     <title>TEC PRC</title>
 
+    <link rel="icon" type="image/png" href="{{ asset('storage/image/logo.jpeg') }}">
+
     <style>
         body {
             font-family: Arial, sans-serif;
