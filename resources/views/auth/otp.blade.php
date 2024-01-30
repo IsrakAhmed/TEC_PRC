@@ -23,6 +23,11 @@
 </head>
 <body>
 <div class="container">
+
+    <a class="navbar-brand" style="width: 5%;" href="/">
+        <img style=" margin: -12px; margin-left: 1em;" src="{{ asset('storage/image/logo.jpeg') }}">
+    </a>
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
