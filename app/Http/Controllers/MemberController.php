@@ -56,7 +56,6 @@ class MemberController extends Controller
             'name' => 'required',
             'department' => 'required',
             'session' => 'required',
-            'joining_date' => 'required|date',
             'mobile_no' => 'required|numeric',
             'email' => 'email|required',
             'address' => 'required',
@@ -70,7 +69,6 @@ class MemberController extends Controller
                 'name' => $request['name'],
                 'department' => $request['department'],
                 'session' => $request['session'],
-                'joining_date' => $request['joining_date'],
                 'mobile_no' => $request['mobile_no'],
                 'email' => $request['email'],
                 'address' => $request['address'],
@@ -89,9 +87,19 @@ class MemberController extends Controller
             ]);
         }
 
-        Session::flash('success', 'Member registered successfully !!!');
+        if (!Auth::check()){
+            Session::flash('success', 'Member registered successfully !!! Login Now');
 
-        return redirect('/register');
+            return redirect('/login');
+        }
+        
+        else{
+            Session::flash('success', 'Member registered successfully !!!');
+
+            return redirect('/register');
+        }
+
+
     }
 
     public function edit(Request $request, Member $member)
