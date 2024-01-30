@@ -86,6 +86,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="/rules-regulations" class="nav-link">Rules</a>
+                </li>
+
+                <li class="nav-item">
                     <a href="/contact" class="nav-link">Contact</a>
                 </li>
 
