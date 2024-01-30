@@ -81,4 +81,7 @@ class HomeController extends Controller
     public function about(Request $request){
         return view('about');
     }
+    public function rules(Request $request){
+        return view('rulesNregulations');
+    }
 }
