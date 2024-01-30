@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Models\User;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 use App\Http\Controllers\Auth\RegisterController;
@@ -35,6 +36,15 @@ class MemberController extends Controller
 
     public function create()
     {
+        if (Auth::check()){
+            $member = Member::find(auth()->user()->id);
+
+            if($member->role == 'General Member'){
+                return redirect('/');
+            }
+        }
+
+
         return view('members.create');
     }
 
@@ -101,7 +111,16 @@ class MemberController extends Controller
 
     public function getidforedit()
     {
-        return view('members.getid');
+
+        if (Auth::check()){
+            $member = Member::find(auth()->user()->id);
+
+            if($member->role == 'Admin' || $member->role == 'Master Admin'){
+                return view('members.getid');
+            }
+        }
+
+        return redirect('/');
     }
 
     public function update(Request $request, Member $member)
@@ -133,7 +152,15 @@ class MemberController extends Controller
 
     public function getidfordelete()
     {
-        return view('members.getidfordelete');
+        if (Auth::check()){
+            $member = Member::find(auth()->user()->id);
+
+            if($member->role == 'Admin' || $member->role == 'Master Admin'){
+                return view('members.getidfordelete');
+            }
+        }
+
+        return redirect('/');
     }
 
     public function viewtodelete(Request $request, Member $member)
