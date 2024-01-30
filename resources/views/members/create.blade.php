@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <label for="department" class="col-sm-2 control-label">Department</label>
             <div class="col-sm-10">
 
@@ -70,15 +70,15 @@
                     </label>
 
                     <label class="radio-option ml-4">
-                        <input type="radio" class="form-control @error('department') is-invalid @enderror" value="EEE" id="department_eee" name="department"> EEE
+                        <input type="radio" class="form-control @error('department') is-invalid @enderror" value="EEE" id="department_eee" disabled name="department"> EEE
                     </label>
 
                     <label class="radio-option ml-4">
-                        <input type="radio" class="form-control @error('department') is-invalid @enderror" value="CE" id="department_ce" name="department"> CE
+                        <input type="radio" class="form-control @error('department') is-invalid @enderror" value="CE" id="department_ce" disabled name="department"> CE
                     </label>
 
                     <label class="radio-option ml-4">
-                        <input type="radio" class="form-control @error('department') is-invalid @enderror" value="TE" id="department_te" name="department"> TE
+                        <input type="radio" class="form-control @error('department') is-invalid @enderror" value="TE" id="department_te" disabled name="department"> TE
                     </label>
 
                 </div>
@@ -89,9 +89,30 @@
                     </span>
                 @enderror
             </div>
-        </div>
+        </div> -->
+
 
         <div class="form-group">
+            <label for="department" class="col-sm-2 control-label">Department</label>
+            <div class="col-sm-10">
+                <select class="form-control @error('department') is-invalid @enderror" id="department" name="department">
+                    <option value="">Select your department</option>
+                    <option value="CSE">CSE</option>
+                    <option value="EEE" disabled>EEE</option>
+                    <option value="CE" disabled>CE</option>
+                    <option value="TE" disabled>TE</option>
+                </select>
+                @error('department')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                @enderror
+            </div>
+        </div>
+
+
+
+        <!--<div class="form-group">
             <label for="session" class="col-sm-2 control-label">Session</label>
             <div class="col-sm-10">
 
@@ -125,7 +146,28 @@
                     </span>
                 @enderror
             </div>
+        </div>-->
+
+        <div class="form-group">
+            <label for="session" class="col-sm-2 control-label">Session</label>
+            <div class="col-sm-10">
+                <select class="form-control @error('session') is-invalid @enderror" id="session" name="session">
+                    <option value="">Select your session</option>
+                    <option value="2018-2019">2018-2019</option>
+                    <option value="2019-2020">2019-2020</option>
+                    <option value="2020-2021">2020-2021</option>
+                    <option value="2021-2022">2021-2022</option>
+                    <option value="2022-2023">2022-2023</option>
+                </select>
+                @error('session')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                @enderror
+            </div>
         </div>
+
+
 
         <div class="form-group">
             <label for="joining_date" class="col-sm-2 control-label">Joining Date</label>
@@ -143,7 +185,7 @@
         <div class="form-group">
             <label for="mobile_no" class="col-sm-2 control-label">Mobile No.</label>
             <div class="col-sm-10">
-                <input type="tel" class="form-control @error('mobile_no') is-invalid @enderror" value="" id="mobile_no" name="mobile_no" placeholder="01700000000">
+                <input type="tel" class="form-control @error('mobile_no') is-invalid @enderror" value="" id="mobile_no" name="mobile_no" placeholder="01500000000">
 
                 @error('mobile_no')
                     <span class="invalid-feedback" role="alert">
@@ -169,7 +211,7 @@
         <div class="form-group">
             <label for="address" class="col-sm-2 control-label">Address</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control @error('address') is-invalid @enderror" value="" id="address" name="address" placeholder="123 Main St, Cityville">
+                <input type="text" class="form-control @error('address') is-invalid @enderror" value="" id="address" name="address" placeholder="Bogra Sadar, Bogra">
 
                 @error('address')
                     <span class="invalid-feedback" role="alert">
@@ -179,7 +221,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <label for="blood_group" class="col-sm-2 control-label">Blood Group</label>
             <div class="col-sm-10">
 
@@ -226,7 +268,30 @@
                     </span>
                 @enderror
             </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="blood_group" class="col-sm-2 control-label">Blood Group</label>
+            <div class="col-sm-10">
+                <select class="form-control @error('blood_group') is-invalid @enderror" id="blood_group" name="blood_group">
+                    <option value="">Select your blood group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                @error('blood_group')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                @enderror
+            </div>
         </div>
+
 
         <!-- Overlay and modal for image -->
         <div class="overlay form-group" id="overlay">
