@@ -169,7 +169,7 @@
 
 
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <label for="joining_date" class="col-sm-2 control-label">Joining Date</label>
             <div class="col-sm-10">
                 <input type="date" class="form-control @error('joining_date') is-invalid @enderror" value="" id="joining_date" name="joining_date" placeholder="">
@@ -180,7 +180,7 @@
                     </span>
                 @enderror
             </div>
-        </div>
+        </div>-->
 
         <div class="form-group">
             <label for="mobile_no" class="col-sm-2 control-label">Mobile No.</label>
