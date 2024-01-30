@@ -100,7 +100,12 @@
     <h1 class="text-center text-primary">TEC Programming & Robotics Club</h1>
 </header>
 
-<h1 style="color: red; text-align: center; margin-top: 4em;">Working On It</h1>
+<img class="img-fluid card-body" src="{{ asset('storage/image/rules_and_regulations.jpg') }}" alt="Rules and Regulations">
+
+<div class="text-center mb-5">
+    <a href="{{ asset('storage/pdf/Rules_and_Regulations_TEC_PRC.pdf') }}" class="btn btn-primary" download>Download as PDF</a>
+</div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
