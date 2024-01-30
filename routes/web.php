@@ -71,6 +71,8 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/about', 'App\Http\Controllers\HomeController@about');
 
+Route::get('/rules-regulations', 'App\Http\Controllers\HomeController@rules');
+
 Route::get('/contact', 'App\Http\Controllers\HomeController@contact');
 
 
