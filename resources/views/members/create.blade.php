@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <form class="pt-3 pl-4 pb-2" method="post" action="/register">
+    <form class="pt-3 pl-4 pb-2 mb-4" method="post" action="/register">
 
         @csrf
 
@@ -228,12 +228,77 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Overlay and modal for image -->
+        <div class="overlay form-group" id="overlay">
+            <div class="modal-content">
+                <img src="{{ asset('storage/image/rules_and_regulations.jpg') }}" alt="Rules" width="100%">
+                <div class="form-group mt-3">
+                    <label style="font-weight: bold;" for="agreeCheckbox">I agree to the rules and regulations:</label>
+                    <input type="checkbox" id="agreeCheckbox">
+                </div>
             </div>
         </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submitButton" class="btn btn-primary" disabled>Submit</button>
+            </div>
+        </div>
+
     </form>
+
+    <style>
+        .overlay {
+            display: flex;
+
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+
+        @media (max-width: 767px) {
+            .modal-content img {
+                width: 100%;
+                height: auto; /* Maintain aspect ratio */
+            }
+        }
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const agreeCheckbox = document.getElementById('agreeCheckbox');
+            const submitButton = document.getElementById('submitButton');
+            const overlay = document.getElementById('overlay');
+            const closeBtn = document.querySelector('.close-btn');
+
+            // Enable submit button when checkbox is checked
+            agreeCheckbox.addEventListener('change', function() {
+                submitButton.disabled = !agreeCheckbox.checked;
+            });
+
+            // Close overlay when close button is clicked
+            closeBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+            });
+
+            // Show overlay instantly when the page loads
+            overlay.style.display = 'flex';
+        });
+    </script>
 
 @endsection
 
