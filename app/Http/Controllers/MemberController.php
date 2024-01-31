@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OtpMail;
+use App\Mail\RegistrationDone;
 use App\Models\Member;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 use App\Http\Controllers\Auth\RegisterController;
@@ -87,12 +90,14 @@ class MemberController extends Controller
             ]);
         }
 
+        Mail::to($request['email'])->send(new RegistrationDone($request['name']));
+
         if (!Auth::check()){
             Session::flash('success', 'Member registered successfully !!! Login Now');
 
             return redirect('/login');
         }
-        
+
         else{
             Session::flash('success', 'Member registered successfully !!!');
 

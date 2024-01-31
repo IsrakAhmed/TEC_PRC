@@ -27,13 +27,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Verify your Identity') }}</div>
+                <div class="card-header">{{ __('Registration Successful') }}</div>
 
-                <h1>Your OTP : {{ $otp }}</h1>
+                <h1>Welcome {{ $name  }},</h1>
 
+                <h1>You are now a registered member of TEC Programming & Robotics Club</h1>
+
+
+                <h2>Join our messenger group now : https://m.me/j/AbaBC7wQOhbbOCB2/</h2>
 
 
                 <p>TEC Programming & Robotics Club</p>
+                <p>tecprc.ru@gmail.com</p>
 
             </div>
         </div>
