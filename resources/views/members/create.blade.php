@@ -14,7 +14,7 @@
         @csrf
 
         <div class="form-group">
-            <label for="id" class="col-sm-2 control-label">ID</label>
+            <label for="id" class="col-sm-2 control-label">Student ID *</label>
             <div class="col-sm-10">
                 <input type="number" class="form-control @error('id') is-invalid @enderror" value="" id="id" name="id" placeholder="2037820100">
 
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">Password</label>
+            <label for="password" class="col-sm-2 control-label">Password *</label>
             <div class="col-sm-10">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
@@ -40,14 +40,14 @@
         </div>
 
         <div class="form-group">
-            <label for="password-confirm" class="col-sm-2 control-label">Confirm Password</label>
+            <label for="password-confirm" class="col-sm-2 control-label">Confirm Password *</label>
             <div class="col-sm-10">
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">Name</label>
+            <label for="name" class="col-sm-2 control-label">Name *</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control @error('name') is-invalid @enderror" value="" id="name" name="name" placeholder="Israk Ahmed">
 
@@ -93,7 +93,7 @@
 
 
         <div class="form-group">
-            <label for="department" class="col-sm-2 control-label">Department</label>
+            <label for="department" class="col-sm-2 control-label">Department *</label>
             <div class="col-sm-10">
                 <select class="form-control @error('department') is-invalid @enderror" id="department" name="department">
                     <option value="">Select your department</option>
@@ -149,7 +149,7 @@
         </div>-->
 
         <div class="form-group">
-            <label for="session" class="col-sm-2 control-label">Session</label>
+            <label for="session" class="col-sm-2 control-label">Session *</label>
             <div class="col-sm-10">
                 <select class="form-control @error('session') is-invalid @enderror" id="session" name="session">
                     <option value="">Select your session</option>
@@ -183,7 +183,7 @@
         </div>-->
 
         <div class="form-group">
-            <label for="mobile_no" class="col-sm-2 control-label">Mobile No.</label>
+            <label for="mobile_no" class="col-sm-2 control-label">Mobile No. *</label>
             <div class="col-sm-10">
                 <input type="tel" class="form-control @error('mobile_no') is-invalid @enderror" value="" id="mobile_no" name="mobile_no" placeholder="01500000000">
 
@@ -196,7 +196,7 @@
         </div>
 
         <div class="form-group">
-            <label for="email" class="col-sm-2 control-label">Email</label>
+            <label for="email" class="col-sm-2 control-label">Email *</label>
             <div class="col-sm-10">
                 <input type="email" class="form-control @error('email') is-invalid @enderror" value="" id="email" name="email" placeholder="israkahmed7@gmail.com">
 
@@ -209,7 +209,7 @@
         </div>
 
         <div class="form-group">
-            <label for="address" class="col-sm-2 control-label">Address</label>
+            <label for="address" class="col-sm-2 control-label">Address *</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control @error('address') is-invalid @enderror" value="" id="address" name="address" placeholder="Bogra Sadar, Bogra">
 
@@ -271,7 +271,7 @@
         </div> -->
 
         <div class="form-group">
-            <label for="blood_group" class="col-sm-2 control-label">Blood Group</label>
+            <label for="blood_group" class="col-sm-2 control-label">Blood Group *</label>
             <div class="col-sm-10">
                 <select class="form-control @error('blood_group') is-invalid @enderror" id="blood_group" name="blood_group">
                     <option value="">Select your blood group</option>
