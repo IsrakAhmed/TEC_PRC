@@ -54,12 +54,12 @@ class MemberController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
+            'id' => 'required|size:10',
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'name' => 'required',
             'department' => 'required',
             'session' => 'required',
-            'mobile_no' => 'required|numeric',
+            'mobile_no' => 'required|numeric|digits:11',
             'email' => 'email|required',
             'address' => 'required',
             'blood_group' => 'required'
@@ -144,12 +144,12 @@ class MemberController extends Controller
         $member = Member::find($searchTerm);
 
         $request->validate([
-            'id' => 'required',
+            'id' => 'required|size:10',
             'name' => 'required',
             'department' => 'required',
             'session' => 'required',
             'joining_date' => 'required|date',
-            'mobile_no' => 'required|numeric',
+            'mobile_no' => 'required|numeric|digits:11',
             'email' => 'email',
             'address' => 'required',
             'blood_group' => 'required',
