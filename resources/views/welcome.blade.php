@@ -115,6 +115,7 @@
             <h2 class="text-primary mb-4">What We Offer</h2>
             <ul class="list-unstyled fw-bold">
                 <li>Programming workshops</li>
+                <li>Programming contests</li>
                 <li>Robotics competitions</li>
                 <li>Collaborative coding projects</li>
                 <li>Networking opportunities</li>

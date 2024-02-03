@@ -28,6 +28,8 @@ class AdminController extends Controller
             ->orWhere('id', 'like', '%' . $searchTerm . '%')
             ->orWhere('department', 'like', '%' . $searchTerm . '%')
             ->orWhere('address', 'like', '%' . $searchTerm . '%')
+            ->orderBy('joining_date', 'asc')
+            ->orderBy('id', 'asc')
             ->paginate(7);
 
         $master = Member::find(auth()->user()->id);
@@ -70,6 +72,10 @@ class AdminController extends Controller
             $members = Member::query()
                 ->where('name', 'like', '%' . $searchTerm . '%')
                 ->orWhere('id', 'like', '%' . $searchTerm . '%')
+                ->orWhere('department', 'like', '%' . $searchTerm . '%')
+                ->orWhere('address', 'like', '%' . $searchTerm . '%')
+                ->orderBy('joining_date', 'asc')
+                ->orderBy('id', 'asc')
                 ->paginate(7);
 
             if ($request->ajax()) {

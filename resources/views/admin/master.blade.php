@@ -62,7 +62,7 @@
 
     <footer class="footer mt-auto pt-2 pb-3">
         <div class="container text-center">
-            <p class="mt-2" style="margin-bottom: 0.5px">© 2023 Israk Ahmed. All rights reserved.</p>
+            <p class="mt-2" style="margin-bottom: 0.5px">© 2024 Israk Ahmed. All rights reserved.</p>
             <a href="https://israkahmed.github.io/Portfolio/">Developed by: Israk Ahmed</a>
         </div>
     </footer>

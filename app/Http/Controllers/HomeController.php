@@ -41,6 +41,8 @@ class HomeController extends Controller
             ->orWhere('id', 'like', '%' . $searchTerm . '%')
             ->orWhere('department', 'like', '%' . $searchTerm . '%')
             ->orWhere('address', 'like', '%' . $searchTerm . '%')
+            ->orderBy('joining_date', 'asc')
+            ->orderBy('id', 'asc')
             ->paginate(7);
 
         $master = Member::find(auth()->user()->id);
