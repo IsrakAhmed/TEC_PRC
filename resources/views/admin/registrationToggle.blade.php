@@ -7,57 +7,70 @@
 
     <h2 class="text-center pt-4">Registration ON / OFF</h2>
 
-    <form action="/home" method="GET" class="search-form" id="member-search-form">
-        <input placeholder="Search" type="text" name="search_term" id="search_term"
-               value="{{ request('search_term') }}">
-    </form>
+    <form class="pt-3 pl-4 pb-2 editForm" method="post" action="/register/toggle/{{ $status->id }}">
 
-    <div class="table-responsive" style="padding-top:2em;">
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Department</th>
-                <th>Session</th>
-                <th>Joining Date</th>
-                <th>Mobile</th>
-                <th>E-Mail</th>
-                <th>Blood Group</th>
-                <th>Address</th>
-            </tr>
-            </thead>
-            <tbody id="member-table-body">
-            @if ($members->isEmpty())
-                <tr>
-                    <td style="color:red; padding-top:25px; padding-left:22em; font-weight: bold;" colspan="6">No
-                        Members Found
-                    </td>
-                </tr>
-            @else
-                @foreach ($members as $member)
-                    <tr>
-                        <td>{{ $member->id }}</td>
-                        <td>{{ $member->name }}</td>
-                        <td>{{ $member->department }}</td>
-                        <td>{{ $member->session }}</td>
-                        <td>{{ $member->joining_date }}</td>
-                        <td>{{ $member->mobile_no }}</td>
-                        <td>{{ $member->email }}</td>
-                        <td>{{ $member->blood_group }}</td>
-                        <td>{{ $member->address }}</td>
-                    </tr>
-                @endforeach
-            @endif
-            </tbody>
-        </table>
-    </div>
+        @csrf
+        @method('PATCH')
 
-    <div class="row pt-4">
-        <div class="col-12 d-flex justify-content-center">
-            {{ $members->links('pagination::bootstrap-4') }}
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+
+        @if(Session::has('error'))
+            <div class="alert alert-danger">
+                {{ Session::get('error') }}
+            </div>
+        @endif
+
+
+        <!--    ID  -->
+        <div class="form-group">
+            <label for="id" class="col-sm-2 control-label">ID</label>
+            <div class="col-sm-10">
+                <input readonly type="number" class="form-control @error('id') is-invalid @enderror" value="{{ $status->id }}" id="id" name="id" placeholder="2037820100">
+
+                @error('id')
+                <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
         </div>
-    </div>
+
+        <!--    Status    -->
+        <div class="form-group">
+            <label for="flag" class="col-sm-2 control-label">Status</label>
+            <div class="col-sm-10">
+
+                <div class="radio-options">
+
+                    <label class="radio-option">
+                        <input type="radio" class="form-control @error('flag') is-invalid @enderror" value=0 id="flag" name="flag" @if($status->flag === 0) checked @endif> OFF
+                    </label>
+
+                    <label class="radio-option ml-4">
+                        <input type="radio" class="form-control @error('flag') is-invalid @enderror" value=1 id="flag" name="flag" @if($status->flag === 1) checked @endif> ON
+                    </label>
+
+                </div>
+
+                @error('flag')
+                <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </form>
 
     <footer class="footer mt-auto pt-2 pb-3">
         <div class="container text-center">
