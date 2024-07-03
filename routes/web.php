@@ -47,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/edit/member', 'App\Http\Controllers\MemberController@edit');
     Route::get('/edit', 'App\Http\Controllers\MemberController@getidforedit');
 
+    Route::get('/register/toggle', 'App\Http\Controllers\AdminController@getRegTogglePage');
+    Route::patch('/register/toggle/{id}', 'App\Http\Controllers\AdminController@updateRegStatus');
+
     Route::post('/delete/member', 'App\Http\Controllers\MemberController@viewtodelete');
     Route::get('/delete', 'App\Http\Controllers\MemberController@getidfordelete');
 
