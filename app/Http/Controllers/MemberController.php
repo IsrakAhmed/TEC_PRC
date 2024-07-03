@@ -6,6 +6,7 @@ use App\Mail\OtpMail;
 use App\Mail\RegistrationDone;
 use App\Models\Member;
 use App\Models\User;
+use App\Models\Status;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -45,8 +46,17 @@ class MemberController extends Controller
             if($member->role == 'General Member'){
                 return redirect('/');
             }
+
+            else{
+                return view('members.create');
+            }
         }
 
+        $status = Status::find(1);  // id = 1 is for registration status
+
+        if($status->flag == 0){
+            return view('members.registeroff');
+        }
 
         return view('members.create');
     }
