@@ -45,6 +45,9 @@
                 <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/register') ? 'active' : ''; ?>">
                     <a class="nav-link" href="/register">Register</a>
                 </li>
+                <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/register/toggle') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="/register/toggle">Registration-Toggle</a>
+                </li>
                 <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/edit') ? 'active' : ''; ?>
                 <?php echo ($_SERVER['REQUEST_URI'] == '/edit/member') ? 'active' : ''; ?>">
                     <a class="nav-link" href="/edit">Edit</a>
